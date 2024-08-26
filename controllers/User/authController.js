@@ -4,7 +4,7 @@ const { createToken } = require("../../middleware/createToken");
 const { body, validationResult } = require("express-validator");
 
 module.exports.register = [
-  body("email").not().isEmpty().withMessage("Email field is required"),
+  body("email").not().isEmpty(). withMessage("Email field is required"),
   async (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
